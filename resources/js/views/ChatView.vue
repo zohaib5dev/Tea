@@ -254,7 +254,7 @@ onBeforeUnmount(() => {
     <div v-else class="grid h-[calc(100dvh-10rem)] min-h-[460px] gap-4 lg:grid-cols-[330px_minmax(0,1fr)]">
         <ChatSidebar :active-id="id" :start-on-groups="isGroup" />
 
-        <section class="card flex min-h-0 flex-col overflow-hidden" :aria-label="`Chat with ${conversation.title}`">
+        <section class="scrollbar-gold card flex min-h-0 flex-col overflow-hidden" :aria-label="`Chat with ${conversation.title}`">
             <!-- header -->
             <div class="flex items-center gap-3 border-b border-ink-700 px-4 py-3">
                 <RouterLink to="/messages" class="rounded-full p-2 text-ink-300 hover:bg-ink-800 hover:text-gold-300 lg:hidden" aria-label="Back to messages"><AppIcon name="back" class="h-5 w-5" /></RouterLink>

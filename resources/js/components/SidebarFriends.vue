@@ -35,7 +35,7 @@ const tabClass = (name) => (tab.value === name ? 'bg-ink-700 text-gold-300 shado
 </script>
 
 <template>
-    <aside class="hidden lg:sticky lg:top-24 lg:flex lg:max-h-[calc(100vh-7rem)] lg:flex-col lg:gap-6 lg:self-start lg:overflow-y-auto" aria-label="Friends">
+    <aside class="scrollbar-gold hidden lg:sticky lg:top-24 lg:flex lg:max-h-[calc(100vh-7rem)] lg:flex-col lg:gap-6 lg:self-start lg:overflow-y-auto" aria-label="Friends">
         <div class="card p-5">
             <div class="mb-4 grid grid-cols-3 gap-1 rounded-xl bg-ink-800/70 p-1 ring-1 ring-ink-700/50" role="tablist">
                 <button type="button" role="tab" class="flex items-center justify-center gap-1.5 rounded-lg px-2 py-2 text-xs font-semibold transition" :class="tabClass('friends')" @click="tab = 'friends'">

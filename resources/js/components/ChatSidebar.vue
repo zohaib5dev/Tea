@@ -23,7 +23,7 @@ const tabClass = (name) => (tab.value === name ? 'bg-ink-700 text-gold-300 shado
 </script>
 
 <template>
-    <aside class="card hidden min-h-0 flex-col overflow-hidden lg:flex" aria-label="Conversations">
+    <aside class="scrollbar-gold card hidden min-h-0 flex-col overflow-hidden lg:flex" aria-label="Conversations">
         <div class="border-b border-ink-700 p-4">
             <div class="mb-3 flex items-center justify-between">
                 <h2 class="font-display text-2xl font-bold text-gold-300">Messages</h2>

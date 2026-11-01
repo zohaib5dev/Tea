@@ -22,8 +22,16 @@ async function submit() {
 <template>
     <div class="grid min-h-screen place-items-center px-4 py-10">
         <div class="card w-full max-w-md p-8">
-            <h1 class="bg-gold-grad bg-clip-text text-center font-display text-5xl font-bold text-transparent">{{ appName }}</h1>
-            <p class="mt-2 text-center text-ink-300">Create your account.</p>
+                <div class="mx-auto flex max-w-6xl items-center justify-center gap-4 px-4 py-3">
+        <RouterLink to="/feed" class="flex items-center gap-3">
+          <img src="/logo.webp" alt="Logo" class="h-15 w-20 object-contain" />
+          <h1
+            class="bg-gold-grad bg-clip-text font-display text-5xl font-bold leading-none text-transparent whitespace-nowrap"
+          >
+            {{ appName }}
+          </h1>
+        </RouterLink>
+      </div> <p class="mt-2 text-center text-ink-300">Create your account.</p>
 
             <form class="mt-8 space-y-4" @submit.prevent="submit">
                 <div>

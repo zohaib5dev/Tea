@@ -51,8 +51,9 @@ onMounted(() => {
 </script>
 
 <template>
-    <header class="sticky top-0 z-30 border-b border-ink-700 bg-ink-950/85 backdrop-blur">
+    <header class="sticky top-0 z-30   border-ink-700 dbg-ink-950/85 backdrop-blur">
         <div class="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
+           <img :src="`/logo.webp`" alt="Logo" class="h-8 w-10">
             <RouterLink to="/feed" class="bg-gold-grad bg-clip-text font-display text-3xl font-bold text-transparent">{{ appName }}</RouterLink>
 
             <nav class="ml-auto hidden items-center gap-1 md:flex" aria-label="Main">
