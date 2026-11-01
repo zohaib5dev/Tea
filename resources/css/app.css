@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-ink-950 font-sans text-ink-50 antialiased;
+        background-image: radial-gradient(900px 400px at 50% -100px, rgba(212, 166, 58, .16), transparent 70%);
+        background-attachment: fixed;
+    }
+    :focus-visible { @apply outline outline-2 outline-offset-2 outline-gold-300; }
+    dialog { @apply text-ink-50; }
+}
+
+@layer components {
+    .card { @apply rounded-2xl border border-ink-700 bg-ink-900; }
+    .btn-gold { @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold-grad px-5 py-2.5 text-sm font-bold text-ink-950 shadow-lg shadow-gold-500/20 transition hover:-translate-y-0.5 hover:shadow-gold-500/40 disabled:pointer-events-none disabled:opacity-60; }
+    .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-full border border-gold-500/60 px-4 py-2 text-sm font-semibold text-gold-300 transition hover:border-transparent hover:bg-gold-grad hover:text-ink-950 disabled:pointer-events-none disabled:opacity-60; }
+    .input { @apply w-full rounded-xl border border-ink-700 bg-ink-800 px-4 py-3 text-ink-50 placeholder-ink-300 focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-500/20; }
+    .liked { @apply text-gold-300; }
+    .liked svg { fill: #d4a63a; stroke: #d4a63a; }
+}
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
