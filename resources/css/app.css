@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --gold-50: 253 248 231; --gold-100: 250 239 194; --gold-200: 246 224 141; --gold-300: 243 213 122; --gold-400: 229 189 79;
+    --gold-500: 212 166 58; --gold-600: 181 134 38; --gold-700: 154 116 24; --gold-800: 111 82 18; --gold-900: 74 54 12;
+    --ink-50: 246 239 222; --ink-200: 207 195 163; --ink-300: 168 154 120;
+    --ink-700: 58 46 23; --ink-800: 35 28 16; --ink-900: 26 21 12; --ink-950: 15 12 7;
+}
+
 @layer base {
     body {
         @apply bg-ink-950 font-sans text-ink-50 antialiased;
-        background-image: radial-gradient(900px 400px at 50% -100px, rgba(212, 166, 58, .16), transparent 70%);
+        background-image: radial-gradient(900px 400px at 50% -100px, rgb(var(--gold-500) / .16), transparent 70%);
         background-attachment: fixed;
     }
     :focus-visible { @apply outline outline-2 outline-offset-2 outline-gold-300; }
@@ -20,43 +27,36 @@
     .liked { @apply text-gold-300; }
     .liked svg { fill: #d4a63a; stroke: #d4a63a; }
  
-    /* Themed scrollbar — gold thumb on a dark ink track */
+       /* Themed scrollbar */
     .scrollbar-gold {
-        scrollbar-width: thin;                       /* Firefox */
-        scrollbar-color: rgba(212, 175, 55, 0.35) transparent;
+        scrollbar-width: thin;
+        scrollbar-color: rgb(var(--gold-500) / .35) transparent;
     }
 
-    /* WebKit (Chrome / Edge / Safari) */
     .scrollbar-gold::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
+        @apply h-2 w-2;
     }
 
     .scrollbar-gold::-webkit-scrollbar-track {
-        background: transparent;
-        border-radius: 999px;
-        margin-block: 4px;
+        @apply rounded-full bg-transparent;
     }
 
     .scrollbar-gold::-webkit-scrollbar-thumb {
-        background-color: rgba(212, 175, 55, 0.25);
-        border-radius: 999px;
-        border: 2px solid transparent;
-        background-clip: content-box;
-        transition: background-color 0.2s ease;
-    }
-
-    .scrollbar-gold:hover::-webkit-scrollbar-thumb {
-        background-color: rgba(212, 175, 55, 0.5);
+        @apply rounded-full border-2 border-transparent bg-clip-content;
+        background-color: rgb(var(--gold-500) / .30);
+        transition: background-color .2s ease;
     }
 
     .scrollbar-gold::-webkit-scrollbar-thumb:hover {
-        background-color: rgba(212, 175, 55, 0.7);
+        background-color: rgb(var(--gold-400) / .75);
     }
 
     .scrollbar-gold::-webkit-scrollbar-corner {
-        background: transparent;
+        @apply bg-transparent;
     }
 }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+
+ 

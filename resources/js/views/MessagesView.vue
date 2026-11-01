@@ -103,7 +103,7 @@ async function createGroup() {
                     <input v-model="group.title" required maxlength="100" class="input" placeholder="Group name">
                     <div class="max-h-48 space-y-1 overflow-y-auto">
                         <label v-for="f in inbox.friends" :key="f.id" class="flex cursor-pointer items-center gap-3 rounded-xl p-2 hover:bg-ink-800">
-                            <input v-model="group.ids" type="checkbox" :value="f.id" class="h-4 w-4 accent-[#d4a63a]">
+                            <input v-model="group.ids" type="checkbox" :value="f.id" class="h-4 w-4 accent-gold-500">
                             <span class="text-sm">{{ f.name }}</span>
                         </label>
                     </div>

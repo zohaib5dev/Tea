@@ -54,7 +54,7 @@ watch(() => [s.active, s.local, s.remote], async () => {
         <div class="relative flex-1 overflow-hidden">
             <video ref="remoteEl" autoplay playsinline class="h-full w-full object-cover" :class="s.remoteVideo ? '' : 'hidden'"></video>
 
-            <div v-if="!s.remoteVideo" class="absolute inset-0 grid place-items-center bg-[radial-gradient(600px_300px_at_50%_30%,rgba(212,166,58,.18),transparent)]">
+            <div v-if="!s.remoteVideo" class="absolute inset-0 grid place-items-center bg-[radial-gradient(600px_300px_at_50%_30%,rgb(var(--gold-500)/.18),transparent)]">
                 <UserAvatar :user="s.peer" size="xl" class="!h-32 !w-32 !text-4xl" />
             </div>
 

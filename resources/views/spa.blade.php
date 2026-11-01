@@ -9,42 +9,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-      body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background-image: url("{{ asset('tea.webp') }}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            filter: blur(8px);
-            transform: scale(1.05); /* prevents blurry edges */
-            z-index: -1;
-        }
-
-        /* Optional dark overlay for readability */
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.25);
-            z-index: -1;
+    <script>
+        window.__USER__ = @json($user);
+        window.__APP_NAME__ = @json(config('app.name'));
+        window.__ICE__ = @json($ice);
+    </script>
+    <style id="boot">
+        body {
+            visibility: hidden;
         }
     </style>
-
     <script>
-        window.__USER__ = @json($user ?? null);
-        window.__APP_NAME__ = @json(config('app.name'));
-        window.__ICE__ = @json($ice ?? null);
+        setTimeout(function() {
+            var b = document.getElementById('boot');
+            if (b) b.remove();
+        }, 3000);
     </script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-
 </head>
 
-<body class="min-h-screen  ">
+<body class="min-h-screen">
     <div id="app"></div>
 </body>
 

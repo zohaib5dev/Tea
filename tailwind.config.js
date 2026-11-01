@@ -1,14 +1,20 @@
 /** @type {import('tailwindcss').Config} */
+const rgb = (name) => `rgb(var(--${name}) / <alpha-value>)`;
+const scale = (prefix, keys) => Object.fromEntries(keys.map((k) => [k, rgb(`${prefix}-${k}`)]));
+
 export default {
     content: ['./resources/views/**/*.blade.php', './resources/js/**/*.{vue,js}'],
     theme: {
         extend: {
+            // The values live in resources/css/app.css (defaults) and are replaced per user by resources/js/lib/theme.js
             colors: {
-                gold: { 50: '#fdf8e7', 100: '#faefc2', 200: '#f6e08d', 300: '#f3d57a', 400: '#e5bd4f', 500: '#d4a63a', 600: '#b58626', 700: '#9a7418', 800: '#6f5212', 900: '#4a360c' },
-                ink: { 50: '#f6efde', 200: '#cfc3a3', 300: '#a89a78', 700: '#3a2e17', 800: '#231c10', 900: '#1a150c', 950: '#0f0c07' },
+                gold: scale('gold', [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]),
+                ink: scale('ink', [50, 200, 300, 700, 800, 900, 950]),
             },
             fontFamily: { display: ['Cormorant Garamond', 'serif'], sans: ['Manrope', 'system-ui', 'sans-serif'] },
-            backgroundImage: { 'gold-grad': 'linear-gradient(135deg, #f3d57a 0%, #d4a63a 50%, #9a7418 100%)' },
+            backgroundImage: {
+                'gold-grad': 'linear-gradient(135deg, rgb(var(--gold-300)) 0%, rgb(var(--gold-500)) 50%, rgb(var(--gold-700)) 100%)',
+            },
         },
     },
     plugins: [],

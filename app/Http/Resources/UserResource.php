@@ -24,6 +24,7 @@ class UserResource extends JsonResource
             'avatar_url' => self::url($u->getAttribute('avatar')),
             'cover_url' => self::url($u->getAttribute('cover_photo')),
             'is_online' => (bool) $u->is_online,
+            'theme' => ['accent' => $u->getAttribute('theme_accent'), 'background' => $u->getAttribute('theme_background')],
             'joined_at' => $u->created_at?->toIso8601String(),
             // Extra values that some endpoints attach to a user:
             'mutual_friends_count' => $this->when($u->getAttribute('mutual_friends_count') !== null, fn () => (int) $u->getAttribute('mutual_friends_count')),

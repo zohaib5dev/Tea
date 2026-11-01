@@ -49,7 +49,7 @@ async function add(u) { if (await actions.add(u.id)) added.value = new Set(added
     <div v-else class="space-y-6">
         <!-- header with stats -->
         <section class="card relative overflow-hidden p-6 sm:p-8">
-            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_220px_at_100%_0%,rgba(212,166,58,.2),transparent)]"></div>
+            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_220px_at_100%_0%,rgb(var(--gold-500)/.2),transparent)]"></div>
             <div class="relative flex flex-wrap items-end justify-between gap-6">
                 <div>
                     <p class="text-xs font-bold uppercase tracking-[0.2em] text-gold-400">Your circle</p>

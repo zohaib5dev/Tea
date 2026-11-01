@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\FeedController as ApiFeedController;
 use App\Http\Controllers\Api\FriendController as ApiFriendController;
 use App\Http\Controllers\Api\PostController as ApiPostController;
 use App\Http\Controllers\Api\ProfileController as ApiProfileController;
+use App\Http\Controllers\Api\ThemeController;
 use App\Http\Controllers\CallController;
 use App\Http\Controllers\FriendController;
 use App\Http\Controllers\LikeController;
@@ -48,6 +49,7 @@ Route::prefix('api')->group(function () {
         Route::get('/users/{user}/photos', [ApiProfileController::class, 'photos']);
         Route::patch('/profile', [ProfileController::class, 'update']);           // existing controller (JSON)
         Route::post('/profile/photo', [ProfileController::class, 'updatePhoto']); // existing controller (JSON)
+   Route::put('/profile/theme', [ThemeController::class, 'update']);
 
         // Friends
         Route::get('/friends', [ApiFriendController::class, 'index']);
